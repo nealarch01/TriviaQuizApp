@@ -154,7 +154,7 @@ struct QuestionsView: View {
                         Button(action: {
                             nextClicked()
                         }) {
-                            Text("Back")
+                            Text("Next")
                                 .font(.system(size: 22, weight: .bold))
                                 .foregroundColor(Color.backgroundColor)
                                 .frame(width: 150, height: 60)
@@ -187,7 +187,7 @@ struct QuestionsView: View {
                         Button(action: {
                             self.presentationMode.wrappedValue.dismiss()
                         }) {
-                            Text("Home")
+                            Text("Back")
                                 .font(.system(size: 24, weight: .bold))
                                 .frame(width: 200, height: 50)
                                 .foregroundColor(Color.backgroundColor)
