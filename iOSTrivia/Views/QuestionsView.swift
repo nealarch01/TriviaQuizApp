@@ -221,6 +221,7 @@ struct QuestionsView: View {
         }
         currentQuestionIndex += 1
         clicked = false
+        selectionCorrect = false
     }
     
     private func restartGame() {
@@ -229,6 +230,7 @@ struct QuestionsView: View {
         viewModel.incorrectCount = 0
         displayResults = false
         clicked = false
+        possibilities = viewModel.initPossiblities(question: questions[currentQuestionIndex]) // Re-initialize because on appear doesn't run from here
     }
     
 }
