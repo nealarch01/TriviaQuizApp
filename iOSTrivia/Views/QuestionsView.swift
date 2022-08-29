@@ -209,7 +209,7 @@ struct QuestionsView: View {
         .navigationBarBackButtonHidden(true)
     }
     
-    private func nextClicked() {
+    func nextClicked() {
         if selectionCorrect == true {
             viewModel.correctCount += 1
         } else {
@@ -224,7 +224,7 @@ struct QuestionsView: View {
         selectionCorrect = false
     }
     
-    private func restartGame() {
+    func restartGame() {
         currentQuestionIndex = 0
         viewModel.correctCount = 0
         viewModel.incorrectCount = 0
