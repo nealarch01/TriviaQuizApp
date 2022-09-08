@@ -41,6 +41,8 @@ class TriviaService {
             
             if decodedData.response_code == 1 {
                 return ([], "Not enough questions in database 😕")
+            } else if decodedData.response_code != 0 {
+                return ([], "There was an error initializing game 😕")
             }
             
             print("Successfully fetched trivia questions!")
