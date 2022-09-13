@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color(hex: 0x333333)
+            Color.backgroundColor
                 .ignoresSafeArea([.all])
             NavigationView {
                 ZStack {
@@ -27,7 +27,7 @@ struct ContentView: View {
                                         HStack() {
                                             Text(viewModel.formatCategoryName(name: category.name))
                                                 .font(.system(size: 26, weight: .bold))
-                                                .foregroundColor(Color.white)
+                                                .foregroundColor(Color.backgroundColor)
                                                 .padding()
                                                 .multilineTextAlignment(.leading)
                                             Spacer()

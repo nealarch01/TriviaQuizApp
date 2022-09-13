@@ -127,7 +127,7 @@ struct QuestionsView: View {
     @State var displayResults: Bool = false
     
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -168,9 +168,9 @@ struct QuestionsView: View {
                     VStack(spacing: 30) {
                         VStack(alignment: .leading) {
                             if Double(viewModel.correctCount) / Double(questions.count) >= 0.8 {
-                                Text("Great work 🎉!\nYou got \(viewModel.correctCount) out of \(questions.count) questions right!")
+                                Text("Great work 🎉!\n\nYou got \(viewModel.correctCount) out of \(questions.count) questions right!")
                             } else if Double(viewModel.correctCount) / Double(questions.count) >= 0.5 {
-                                Text("Good job!\nYou got \(viewModel.correctCount) out of \(questions.count) questions right!")
+                                Text("Good job!\n\nYou got \(viewModel.correctCount) out of \(questions.count) questions right!")
                             } else {
                                 Text("You got \(viewModel.correctCount) out of \(questions.count) questions right.\n\nPractice makes perfect!")
                             }
@@ -185,7 +185,7 @@ struct QuestionsView: View {
                         }
                         
                         Button(action: {
-                            self.presentationMode.wrappedValue.dismiss()
+                            self.dismiss()
                         }) {
                             Text("Back")
                                 .font(.system(size: 24, weight: .bold))
