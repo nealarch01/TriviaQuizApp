@@ -144,7 +144,6 @@ struct QuestionsView: View {
                 
                 ProgressBar(percentComplete: Double(currentQuestionIndex + 1) / Double(questions.count))
                 if displayResults == false {
-                    // MARK: -- HERE
                     resultsView()
                 } else {
                     triviaQuizView()
