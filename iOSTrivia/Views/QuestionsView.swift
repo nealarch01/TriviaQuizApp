@@ -51,7 +51,7 @@ fileprivate struct AnswerBox: View {
                                     .padding()
                             }
                         }
-                } // End of button
+                } // button
                 .background(markCorrect())
                 .cornerRadius(12)
                 .frame(width: geometry.size.width) // Centers the ZStack
@@ -100,8 +100,8 @@ fileprivate struct QuestionView: View {
                             .disabled(clicked)
                     }
                 }
-            } // End of VStack
-        } // End of ZStack
+            } // VStack
+        } // ZStack
     }
 }
 
@@ -147,14 +147,14 @@ struct QuestionsView: View {
                     resultsView()
                 } else {
                     triviaQuizView()
-                } // End of else 
+                } // else
                 
                 Spacer()
-            } // End of VStack
+            } // VStack
             .onAppear {
                 possibilities = viewModel.initPossiblities(question: questions[currentQuestionIndex])
             }
-        } // End of ZStack
+        } // ZStack
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
     }
@@ -201,7 +201,7 @@ struct QuestionsView: View {
                     .cornerRadius(12)
                     .shadow(radius: 2)
                     .padding([.top], 30)
-            } // End of Button
+            } // Button
         }
     }
     

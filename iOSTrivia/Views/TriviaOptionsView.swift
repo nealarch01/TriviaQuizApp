@@ -62,7 +62,7 @@ struct TriviaOptionsView: View {
                             },
                             isSelected: viewModel.isDifficultyActive(.hard)
                         )
-                    } // End of LazyVGrid
+                    } // LazyVGrid
                 }
                 
                 
@@ -87,7 +87,7 @@ struct TriviaOptionsView: View {
                             },
                             isSelected: viewModel.isTriviaTypeActive(.multipleChoice)
                         )
-                    } // End of LazyVGrid
+                    } // LazyVGrid
                     
                     OptionButton(
                         title: "True / False",
@@ -139,7 +139,7 @@ struct TriviaOptionsView: View {
                             }
                         }
                         .padding([.top])
-                } // End of NavigationLink
+                } // NavigationLink
                 
                 if viewModel.errorMessage != "" {
                     Text(viewModel.errorMessage)
@@ -148,10 +148,10 @@ struct TriviaOptionsView: View {
                 }
                 
                 Spacer()
-            } // End of VStack
+            } // VStack
             .navigationTitle(triviaCategory.name)
             .navigationBarTitleDisplayMode(.inline)
-        } // End of Root ZStack
+        } // Root ZStack
     }
 }
 

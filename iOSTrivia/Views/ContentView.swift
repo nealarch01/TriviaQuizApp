@@ -37,13 +37,13 @@ struct ContentView: View {
                                         .cornerRadius(15)
                                         .frame(width: geometry.size.width) // Center horizontally
                                         
-                                    } // End of GeometryReader
+                                    } // GeometryReader
                                     .frame(height: 100)
-                                } // End of NavigationLink
-                            } // End of ForEach
-                        } // End of VStack
-                    } // End of Scrollview
-                } // End of ZStack
+                                } // NavigationLink
+                            } // ForEach
+                        } // VStack
+                    } // Scrollview
+                } // ZStack
                 .navigationTitle("Trivia Game")
                 .toolbar {
                     ToolbarItem {
@@ -59,9 +59,9 @@ struct ContentView: View {
                         await viewModel.setupCategories()
                     }
                 }
-            } // End of NavigationView
+            } // NavigationView
             .navigationViewStyle(.stack) // Prevents constraint error
-        } // End of Root ZStack
+        } // Root ZStack
         .preferredColorScheme(lightMode == true ? .light : .dark)
     }
 }
