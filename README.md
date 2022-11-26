@@ -5,6 +5,7 @@ iOS Trivia app that uses OpenTriviaDatabase API
 - API Fetching and JSON decoding
 - Light and Dark Mode UI
 - Relative Component Sizing / Positioning
+- Responsive User Interface for iPhones
 
 Project Structure
 ```
