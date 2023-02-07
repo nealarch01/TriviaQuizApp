@@ -44,6 +44,9 @@ Project Structure
 │   └── TriviaOptionsView.swift
 └── iOSTriviaApp.swift
 ```
+## Screenshots
+<img width="381" alt="Screenshot 2023-02-06 at 5 24 38 PM" src="https://user-images.githubusercontent.com/73256760/217124484-2d7f1c87-b6f3-4b5f-8d85-cb33e111423b.png">
+<img width="365" alt="Screenshot 2023-02-06 at 5 24 46 PM" src="https://user-images.githubusercontent.com/73256760/217124516-3cf0ceee-40ca-4450-b3f0-87634fda151e.png">
 
 
 ## Video
