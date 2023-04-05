@@ -32,25 +32,28 @@ fileprivate struct AnswerBox: View {
                         wasSelected = true
                     }
                 }) {
-                    Text(possibility.text)
-                        .font(.system(size: 24, weight: .medium))
-                        .foregroundColor(Color.black)
-                        .minimumScaleFactor(0.5)
-                        .padding()
-                        .frame(width: geometry.size.width * 0.9, height: 60)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 12)
-                                .stroke(Color.black, lineWidth: 2)
-                                .shadow(color: Color.black.opacity(0.7), radius: 2)
-                        }
-                        .overlay(alignment: .trailing) {
+                    HStack(spacing: 0) {
+                        Text(possibility.text)
+                            .font(.system(size: 24, weight: .medium))
+                            .minimumScaleFactor(0.3)
+                            .lineLimit(nil)
+                            .foregroundColor(Color.black)
+                            .padding([.leading], wasSelected ? 40 : 0)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 60)
                             if wasSelected == true {
                                 Image(systemName: clickedComplete == true && possibility.incorrect == false ? "checkmark" : "xmark")
                                     .font(.system(size: 28, weight: .bold))
                                     .foregroundColor(Color.white)
-                                    .padding()
+                                    .frame(width: 40, height: 40)
                             }
-                        }
+                    }
+                    .frame(width: geometry.size.width * 0.9, height: 60)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.black, lineWidth: 2)
+                            .shadow(color: Color.black.opacity(0.7), radius: 2)
+                    }
                 } // button
                 .background(markCorrect())
                 .cornerRadius(12)
@@ -144,9 +147,9 @@ struct QuestionsView: View {
                 
                 ProgressBar(percentComplete: Double(currentQuestionIndex + 1) / Double(questions.count))
                 if displayResults == false {
-                    resultsView()
-                } else {
                     triviaQuizView()
+                } else {
+                    resultsView()
                 } // else
                 
                 Spacer()
@@ -184,7 +187,7 @@ struct QuestionsView: View {
     }
     
     @ViewBuilder
-    func resultsView() -> some View {
+    func triviaQuizView() -> some View {
         QuestionView(question: questions[currentQuestionIndex].question, possibilities: possibilities, clicked: $clicked, selectionCorrect: $selectionCorrect)
             .onChange(of: currentQuestionIndex) { _ in
                 possibilities = viewModel.initPossiblities(question: questions[currentQuestionIndex])
@@ -206,7 +209,7 @@ struct QuestionsView: View {
     }
     
    @ViewBuilder
-    func triviaQuizView() -> some View {
+    func resultsView() -> some View {
         VStack(spacing: 30) {
             VStack(alignment: .leading) {
                 if Double(viewModel.correctCount) / Double(questions.count) >= 0.8 {
