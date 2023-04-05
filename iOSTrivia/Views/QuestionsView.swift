@@ -38,6 +38,7 @@ fileprivate struct AnswerBox: View {
                             .minimumScaleFactor(0.3)
                             .lineLimit(nil)
                             .foregroundColor(Color.black)
+                            .padding(4)
                             .padding([.leading], wasSelected ? 40 : 0)
                             .frame(maxWidth: .infinity)
                             .frame(height: 60)
